@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderPage implements OnInit {
 
+  public SearchBarOpen = false;
+
   constructor() { }
 
   ngOnInit() {

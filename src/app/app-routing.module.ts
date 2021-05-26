@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'cards',
+    redirectTo: 'noticia',
     pathMatch: 'full'
   },
   {
@@ -19,6 +19,15 @@ const routes: Routes = [
     path: 'cards',
     loadChildren: () => import('./cards/cards.module').then( m => m.CardsPageModule)
   },
+  {
+    path: 'noticia',
+    loadChildren: () => import('./noticia/noticia.module').then( m => m.NoticiaPageModule)
+  },  {
+    path: 'buttons',
+    loadChildren: () => import('./buttons/buttons.module').then( m => m.ButtonsPageModule)
+  },
+
+
 ];
 
 @NgModule({
