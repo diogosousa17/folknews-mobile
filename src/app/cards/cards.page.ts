@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CardsService } from './cards.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsPage implements OnInit {
 
-  constructor() { }
+  ultimas: any;
+  type = this.router.url
+  
+  constructor(private cardsService: CardsService, private router: Router) { }
 
   ngOnInit() {
+    this.getType();
+  }
+
+  getType() {
+    this.cardsService.getType(this.type).subscribe(response => this.ultimas = response)
+  }
+
+  selectType(type) {
+    type = type
+    this.getType()
   }
   
 

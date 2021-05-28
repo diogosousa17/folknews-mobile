@@ -7,10 +7,9 @@ img {
     border-radius: 16px;
 }
 h1 {
-    padding-left: 18px;
+    padding-left: 12px;
     font-weight: bold;
     font-size: 20px;
-    width: 310px;
 }
 .autor {
     font-size: 12px;
@@ -25,4 +24,41 @@ h1 {
 .dados {
     display: flex;
     justify-content: space-between;
+    margin-top: -20px;
+    margin-bottom: -15px;
+}
+.texto {
+    width: 305px;
+    text-align: justify;
+    padding-left: 11px;
+}
+.descricao {
+    width: 305px;
+    text-align: justify;
+    padding-left: 11px;
+    color: #696969;
+}
+.categoria {
+    width: 305px;
+    text-align: justify;
+    padding-left: 11px;
+    color: #A9A9A9;
+    font-size: 12px;
+    margin-bottom: -10px;
+}
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+button {
+    background-color: transparent;
+    height: 30px;
+    margin-right: 20px;
+    width: 30px;
+    
+    ion-icon {
+        font-size: 26px;
+    }
 }

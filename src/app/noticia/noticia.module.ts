@@ -9,6 +9,7 @@ import { NoticiaPageRoutingModule } from './noticia-routing.module';
 import { NoticiaPage } from './noticia.page';
 import { HeaderPage } from '../header/header.page';
 
+
 @NgModule({
   imports: [
     CommonModule,

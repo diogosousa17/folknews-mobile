@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { NoticiaService } from './noticia.service';
 
 @Component({
   selector: 'app-noticia',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoticiaPage implements OnInit {
 
-  constructor() { }
+  id: any;
+  news: any;
+
+  constructor(private noticiaService: NoticiaService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    const par = this.route.snapshot.paramMap.get('id');
+    this.id=par;
+    this.getNews()
+  }
+
+  getNews() {
+    this.noticiaService.getNews(this.id).subscribe((response: any) => (this.news = response))
   }
 
 }

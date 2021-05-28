@@ -1,16 +1,29 @@
 <ion-header>
     <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="home"></ion-back-button>
-      </ion-buttons>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="home"></ion-back-button>
+        </ion-buttons>
+        <ion-label slot="end">
+            <button><ion-icon name="share-social-outline"></ion-icon></button>
+        </ion-label>
     </ion-toolbar>
-  </ion-header>
+</ion-header>
 <ion-content>
-    <img src="https://images.unsplash.com/photo-1619968987472-4d1b2784592e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80">
-    <h1>Mulher nadou por 5 horas seguidas e ficou com os dedos enrugados</h1>
-    <div class="dados">
-        <h5 class="autor">Nome Autor</h5>
-        <h5 class="data">01/01/2022</h5>
+    <div class="categoria">
+        <p>{{noticia.tags[0].nome}}</p>
     </div>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure quas molestias laborum laudantium neque reiciendis cum animi hic provident. Nobis dolore tenetur porro ab maiores quod corrupti deleniti nesciunt delectus?</p>
+    <h1>{{noticia.titulo}}</h1>
+    <div class="descricao">
+        <p>{{noticia.descricao}}</p>
+    </div>
+    <img src={{noticia.multimediaPrincipal}}>
+    <hr/>
+    <div class="dados">
+        <h5 class="autor">{{noticia.autores[0].nome}}</h5>
+        <h5 class="data">{{noticia.data | date: 'MMM d, y'}}</h5>
+    </div>
+    <hr/>
+    <div class="texto">
+        <p>{{noticia.texto}}</p>
+    </div>
 </ion-content>
