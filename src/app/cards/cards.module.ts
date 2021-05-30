@@ -8,6 +8,9 @@ import { CardsPageRoutingModule } from './cards-routing.module';
 
 import { CardsPage } from './cards.page';
 import { HeaderPage } from '../header/header.page';
+import { NoticiaPage } from '../noticia/noticia.page';
+import { HeaderNoticiaPage } from '../header-noticia/header-noticia.page';
+import { ButtonsPage } from '../buttons/buttons.page';
 
 @NgModule({
   imports: [
@@ -16,6 +19,6 @@ import { HeaderPage } from '../header/header.page';
     IonicModule,
     CardsPageRoutingModule,
   ],
-  declarations: [CardsPage, HeaderPage]
+  declarations: [CardsPage, HeaderPage, NoticiaPage, HeaderNoticiaPage, ButtonsPage]
 })
 export class CardsPageModule {}

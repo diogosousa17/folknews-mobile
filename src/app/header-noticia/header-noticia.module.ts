@@ -4,11 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HeaderPageRoutingModule } from './header-routing.module';
+import { HeaderNoticiaPageRoutingModule } from './header-noticia-routing.module';
 
-import { HeaderPage } from './header.page';
+import { HeaderNoticiaPage } from './header-noticia.page';
 import { NoticiaPage } from '../noticia/noticia.page';
-import { HeaderNoticiaPage } from '../header-noticia/header-noticia.page';
+import { HeaderPage } from '../header/header.page';
 import { CardsPage } from '../cards/cards.page';
 
 @NgModule({
@@ -16,8 +16,8 @@ import { CardsPage } from '../cards/cards.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    HeaderPageRoutingModule
+    HeaderNoticiaPageRoutingModule
   ],
   declarations: [NoticiaPage, HeaderPage, HeaderNoticiaPage, CardsPage]
 })
-export class HeaderPageModule {}
+export class HeaderNoticiaPageModule {}

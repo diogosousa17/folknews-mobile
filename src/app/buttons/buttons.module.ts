@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { ButtonsPageRoutingModule } from './buttons-routing.module';
 
 import { ButtonsPage } from './buttons.page';
+import { HeaderPage } from '../header/header.page';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { ButtonsPage } from './buttons.page';
     IonicModule,
     ButtonsPageRoutingModule
   ],
-  declarations: [ButtonsPage]
+  declarations: [ButtonsPage, HeaderPage]
 })
 export class ButtonsPageModule {}

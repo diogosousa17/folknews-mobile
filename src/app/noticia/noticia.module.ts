@@ -8,6 +8,8 @@ import { NoticiaPageRoutingModule } from './noticia-routing.module';
 
 import { NoticiaPage } from './noticia.page';
 import { HeaderPage } from '../header/header.page';
+import { HeaderNoticiaPage } from '../header-noticia/header-noticia.page';
+import { CardsPage } from '../cards/cards.page';
 
 
 @NgModule({
@@ -17,6 +19,6 @@ import { HeaderPage } from '../header/header.page';
     IonicModule,
     NoticiaPageRoutingModule
   ],
-  declarations: [NoticiaPage, HeaderPage]
+  declarations: [NoticiaPage, HeaderPage, HeaderNoticiaPage, CardsPage]
 })
 export class NoticiaPageModule {}

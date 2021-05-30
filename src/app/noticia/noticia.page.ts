@@ -9,19 +9,49 @@ import { NoticiaService } from './noticia.service';
 })
 export class NoticiaPage implements OnInit {
 
-  id: any;
-  news: any;
+  news: any
+  id: string = ''
+  like = 0
+  dislike = 0
 
-  constructor(private noticiaService: NoticiaService, private route: ActivatedRoute) { }
+  constructor(private service: NoticiaService, private route: ActivatedRoute) { }
 
-  ngOnInit() {
-    const par = this.route.snapshot.paramMap.get('id');
-    this.id=par;
-    this.getNews()
+  ngOnInit(): void {
+    this.initCurrentNew()
   }
 
-  getNews() {
-    this.noticiaService.getNews(this.id).subscribe((response: any) => (this.news = response))
+  getNews(id: string) {
+    this.service.getNews(id)
+    .subscribe(response => this.news = response
+      )
+    }
+
+  initCurrentNew() {
+    const newsId = this.route.snapshot.paramMap.get('id')
+    if (newsId != null) {
+      this.id = newsId;
+    }
+    this.service.getNews(this.id).subscribe(response => {
+      this.news = response
+      this.news = [this.news]
+    });
   }
 
+  likeUp() {
+    if(this.like < 1 && this.dislike === 0) {
+      this.like++
+    }
+    else if(this.like=1) {
+      this.like--
+    }
+  }
+  
+  dislikeUp() {
+    if(this.dislike < 1 && this.like === 0) {
+      this.dislike++
+    }
+    else if(this.dislike = 1) {
+      this.dislike--
+    }
+  }
 }

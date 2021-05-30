@@ -1,18 +1,7 @@
 <app-header></app-header>
-<ion-content>    
-  <ion-slides>
-    <ion-slide>
-      <button routerLink="/ultimas">Últimas</button>
-      <button routerLink="/desporto">Desporto</button>
-      <button routerLink="/pais">País</button>
-    </ion-slide>
-    <ion-slide>
-      <button routerLink="/saude">Saúde</button>
-      <button routerLink="/mundo">Mundo</button>
-      <button routerLink="/cultura">Cultura</button>
-    </ion-slide>
-  </ion-slides>
-  <div class="cards" *ngFor="let ultima of ultimas">
+<ion-content>
+  <app-buttons></app-buttons>
+  <div class="cards" *ngFor="let ultima of ultimas" [routerLink]="['/noticia', ultima.id]">
     <img src="{{ultima.multimediaPrincipal}}">
     <div class="texto">
       <h1>{{ultima.titulo}}</h1>

@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/ultimas',
+    redirectTo: 'ultimas',
     pathMatch: 'full'
   },
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () => import('./cards/cards.module').then( m => m.CardsPageModule)
   },
   {
-    path: 'noticia',
+    path: 'noticia/:id',
     loadChildren: () => import('./noticia/noticia.module').then( m => m.NoticiaPageModule)
   },
   {
@@ -36,7 +36,7 @@ const routes: Routes = [
     loadChildren: () => import('./cards/cards.module').then( m => m.CardsPageModule)
   },
   {
-    path: 'pais',
+    path: 'ambiente',
     loadChildren: () => import('./cards/cards.module').then( m => m.CardsPageModule)
   },
   {
@@ -51,6 +51,11 @@ const routes: Routes = [
     path: 'cultura',
     loadChildren: () => import('./cards/cards.module').then( m => m.CardsPageModule)
   },
+  {
+    path: 'header-noticia',
+    loadChildren: () => import('./header-noticia/header-noticia.module').then( m => m.HeaderNoticiaPageModule)
+  },
+
 ];
 
 @NgModule({

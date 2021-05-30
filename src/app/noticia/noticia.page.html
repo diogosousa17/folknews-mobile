@@ -1,29 +1,42 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-back-button defaultHref="home"></ion-back-button>
-        </ion-buttons>
-        <ion-label slot="end">
-            <button><ion-icon name="share-social-outline"></ion-icon></button>
-        </ion-label>
-    </ion-toolbar>
-</ion-header>
-<ion-content>
+<app-header-noticia></app-header-noticia>
+<ion-content *ngFor="let new of news" padding>
     <div class="categoria">
-        <p>{{noticia.tags[0].nome}}</p>
+        <p>{{new.tags[0].nome}}</p>
     </div>
-    <h1>{{noticia.titulo}}</h1>
+    <h1>{{new.titulo}}</h1>
     <div class="descricao">
-        <p>{{noticia.descricao}}</p>
+        <p>{{new.descricao}}</p>
     </div>
-    <img src={{noticia.multimediaPrincipal}}>
+    <img src="{{new.multimediaPrincipal}}">
     <hr/>
     <div class="dados">
-        <h5 class="autor">{{noticia.autores[0].nome}}</h5>
-        <h5 class="data">{{noticia.data | date: 'MMM d, y'}}</h5>
+        <h5 class="autor">{{new.autores[0].nome}}</h5>
+        <h5 class="data">{{new.data}}</h5>
     </div>
     <hr/>
     <div class="texto">
-        <p>{{noticia.texto}}</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam eos, accusamus ex repudiandae earum maiores corporis illo adipisci necessitatibus distinctio, dolorum ducimus impedit quos quidem iure molestias voluptatem accusantium magnam.</p>
+    </div>
+    <ion-fab vertical="bottom" horizontal="end">
+        <ion-fab-button color="success">
+            <ion-icon name="share-social-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+            <ion-fab-button><ion-icon name="logo-whatsapp"></ion-icon></ion-fab-button>
+            <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+            <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+            <ion-fab-button><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+        </ion-fab-list>
+    </ion-fab>
+    <div class="avaliar">
+        <h1>Avalie este Artigo</h1>
+    </div>
+    <div class="likeDislike">
+        <div class="like">
+            <ion-button (click)="likeUp()"><ion-icon name="caret-up-circle-outline"></ion-icon>{{like}}</ion-button>
+        </div>
+        <div class="dislike">
+            <ion-button (click)="dislikeUp()" color="danger"><ion-icon name="caret-down-circle-outline"></ion-icon>{{dislike}}</ion-button>
+        </div>
     </div>
 </ion-content>

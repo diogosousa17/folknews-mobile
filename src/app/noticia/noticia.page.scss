@@ -7,19 +7,22 @@ img {
     border-radius: 16px;
 }
 h1 {
-    padding-left: 12px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
     font-weight: bold;
     font-size: 20px;
 }
 .autor {
     font-size: 12px;
-    padding-left: 12px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .data {
     font-size: 12px;
-    padding-left: 11px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: right;
-    padding-right: 12px;
 }
 .dados {
     display: flex;
@@ -28,14 +31,16 @@ h1 {
     margin-bottom: -15px;
 }
 .texto {
-    width: 305px;
+    width: 295px;
     text-align: justify;
-    padding-left: 11px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .descricao {
-    width: 305px;
+    width: 295px;
     text-align: justify;
-    padding-left: 11px;
+    margin-left: auto;
+    margin-right: auto;
     color: #696969;
 }
 .categoria {
@@ -52,13 +57,41 @@ hr {
     border: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-button {
-    background-color: transparent;
-    height: 30px;
-    margin-right: 20px;
-    width: 30px;
-    
-    ion-icon {
-        font-size: 26px;
+.avaliar {
+    text-align: center;
+    margin-top: 20px;
+}
+.likeDislike {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    .like {
+        ion-button {
+            width: 60px;
+            height: 40px;
+            ion-icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+    .dislike {
+        ion-button {
+            width: 60px;
+            height: 40px;
+            ion-icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
     }
 }
+ion-content {
+    background-color: white;
+    --offset-bottom: auto!important;
+    --overflow: hidden;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
