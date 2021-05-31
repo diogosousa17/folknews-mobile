@@ -9,7 +9,7 @@ export class HeaderService {
   constructor(private http: HttpClient) { }
 
   getNews(search){
-    return this.http.get('http://www.publico.pt/api/list/' + search);
+    return this.http.get(`https://www.publico.pt/api/list/search?query=${search}`);
   }
 
 }

@@ -11,7 +11,7 @@
     <hr/>
     <div class="dados">
         <h5 class="autor">{{new.autores[0].nome}}</h5>
-        <h5 class="data">{{new.data}}</h5>
+        <h5 class="data">{{new.data | date: 'MMM d, y'}}</h5>
     </div>
     <hr/>
     <div class="texto">

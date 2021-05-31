@@ -1,10 +1,13 @@
 button {
     background-color: transparent;
     height: 30px;
-    margin-right: 20px;
     width: 30px;
     
     ion-icon {
         font-size: 26px;
     }
+}
+ion-title {
+    font-family: 'Krona One', sans-serif;
+    cursor: pointer;
 }

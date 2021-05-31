@@ -13,6 +13,7 @@ export class NoticiaPage implements OnInit {
   id: string = ''
   like = 0
   dislike = 0
+  
 
   constructor(private service: NoticiaService, private route: ActivatedRoute) { }
 

@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-toolbar>
-      <ion-title *ngIf="!SearchBarOpen">FOLKNEWS</ion-title>
+      <ion-title *ngIf="!SearchBarOpen" routerLink="/ultimas">FOLKNEWS</ion-title>
       <ion-searchbar *ngIf="SearchBarOpen" showCancelButton="true" (ionCancel)="SearchBarOpen=false" animated="true"></ion-searchbar>
       <ion-buttons slot="end" *ngIf="!SearchBarOpen">
         <button ion-button icon-only (click)="SearchBarOpen=true"><ion-icon slot="icon-only" name="search"></ion-icon></button>
