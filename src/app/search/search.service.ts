@@ -8,8 +8,8 @@ export class SearchService {
 
   constructor(private http: HttpClient) { }
 
-  getNews(search){
-    return this.http.get(`https://www.publico.pt/api/list/search?query=${search}`);
+  getNewsSearch(search){
+    return this.http.get(`https://www.publico.pt/api/list/${search}`);
   }
 
 }

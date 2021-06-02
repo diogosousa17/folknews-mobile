@@ -9,31 +9,8 @@ import { HeaderService } from './header.service';
 })
 export class HeaderPage implements OnInit {
 
-  news: any
-  search: string = ''
-
-  public SearchBarOpen = false;
-
-  constructor(private headerService: HeaderService, private route: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit() {
-    this.initCurrentNew()
-  }
-
-  getNews(search: string) {
-    this.headerService.getNews(search)
-    .subscribe(response => this.news = response
-      )
-    }
-
-  initCurrentNew() {
-    const newsSearch = this.route.snapshot.paramMap.get('search')
-    if (newsSearch != null) {
-      this.search = newsSearch;
-    }
-    this.headerService.getNews(this.search).subscribe(response => {
-      this.news = response
-      this.news = [this.news]
-    });
   }
 }

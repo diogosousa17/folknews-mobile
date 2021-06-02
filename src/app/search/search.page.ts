@@ -9,32 +9,18 @@ import { SearchService } from './search.service';
 })
 export class SearchPage implements OnInit {
 
-  news: any
-  search: string = ''
+  news: any = []
+  search: any
+  queryName = this.router.url
 
-  public SearchBarOpen = false;
-
-  constructor(private searchService: SearchService, private route: ActivatedRoute) { }
+  constructor(private searchService: SearchService, private router: ActivatedRoute) { }
 
   ngOnInit() {
-    this.initCurrentNew()
   }
 
-  getNews(search: string) {
-    this.searchService.getNews(search)
-    .subscribe(response => this.news = response
+  getNews(news: any) {
+    this.searchService.getNewsSearch(news)
+      .subscribe(response => this.news = response
       )
-    }
-
-  initCurrentNew() {
-    const newsSearch = this.route.snapshot.paramMap.get('search')
-    if (newsSearch != null) {
-      this.search = newsSearch;
-    }
-    this.searchService.getNews(this.search).subscribe(response => {
-      this.news = response
-      this.news = [this.news]
-    });
   }
-
 }

@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ButtonsPageRoutingModule } from './buttons-routing.module';
+import { FooterPageRoutingModule } from './footer-routing.module';
 
-import { ButtonsPage } from './buttons.page';
+import { FooterPage } from './footer.page';
 import { HeaderPage } from '../header/header.page';
 import { SearchPage } from '../search/search.page';
 
@@ -15,8 +15,8 @@ import { SearchPage } from '../search/search.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    ButtonsPageRoutingModule
+    FooterPageRoutingModule
   ],
-  declarations: [ButtonsPage, HeaderPage, SearchPage]
+  declarations: [FooterPage, HeaderPage, SearchPage]
 })
-export class ButtonsPageModule {}
+export class FooterPageModule {}

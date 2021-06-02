@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -6,10 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class HeaderService {
 
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
-  getNews(search){
-    return this.http.get(`https://www.publico.pt/api/list/search?query=${search}`);
-  }
+ 
 
 }

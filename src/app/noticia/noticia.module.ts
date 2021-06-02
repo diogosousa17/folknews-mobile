@@ -10,6 +10,7 @@ import { NoticiaPage } from './noticia.page';
 import { HeaderPage } from '../header/header.page';
 import { HeaderNoticiaPage } from '../header-noticia/header-noticia.page';
 import { CardsPage } from '../cards/cards.page';
+import { FooterPage } from '../footer/footer.page';
 
 
 @NgModule({
@@ -19,6 +20,6 @@ import { CardsPage } from '../cards/cards.page';
     IonicModule,
     NoticiaPageRoutingModule
   ],
-  declarations: [NoticiaPage, HeaderPage, HeaderNoticiaPage, CardsPage]
+  declarations: [NoticiaPage, HeaderPage, HeaderNoticiaPage, CardsPage, FooterPage]
 })
 export class NoticiaPageModule {}

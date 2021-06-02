@@ -1,42 +1,91 @@
 <app-header-noticia></app-header-noticia>
 <ion-content *ngFor="let new of news" padding>
-    <div class="categoria">
-        <p>{{new.tags[0].nome}}</p>
-    </div>
-    <h1>{{new.titulo}}</h1>
-    <div class="descricao">
-        <p>{{new.descricao}}</p>
-    </div>
-    <img src="{{new.multimediaPrincipal}}">
-    <hr/>
-    <div class="dados">
-        <h5 class="autor">{{new.autores[0].nome}}</h5>
-        <h5 class="data">{{new.data | date: 'MMM d, y'}}</h5>
-    </div>
-    <hr/>
-    <div class="texto">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam eos, accusamus ex repudiandae earum maiores corporis illo adipisci necessitatibus distinctio, dolorum ducimus impedit quos quidem iure molestias voluptatem accusantium magnam.</p>
-    </div>
-    <ion-fab vertical="bottom" horizontal="end">
-        <ion-fab-button color="success">
-            <ion-icon name="share-social-outline"></ion-icon>
-        </ion-fab-button>
-        <ion-fab-list side="top">
-            <ion-fab-button><ion-icon name="logo-whatsapp"></ion-icon></ion-fab-button>
-            <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
-            <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
-            <ion-fab-button><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
-        </ion-fab-list>
-    </ion-fab>
-    <div class="avaliar">
-        <h1>Avalie este Artigo</h1>
-    </div>
-    <div class="likeDislike">
-        <div class="like">
-            <ion-button (click)="likeUp()"><ion-icon name="caret-up-circle-outline"></ion-icon>{{like}}</ion-button>
+    <div class="container">
+        <div class="categoria">
+            <p>{{new.tags[0].nome}}</p>
         </div>
-        <div class="dislike">
-            <ion-button (click)="dislikeUp()" color="danger"><ion-icon name="caret-down-circle-outline"></ion-icon>{{dislike}}</ion-button>
+        <h1>{{new.titulo}}</h1>
+        <div class="descricao">
+            <p>{{new.descricao}}</p>
+        </div>
+        <img src="{{new.multimediaPrincipal}}">
+        <hr/>
+        <div class="dados">
+            <h5 class="autor">{{new.autores[0].nome}}</h5>
+            <h5 class="data">{{new.data | date: 'MMM d, y, h:mm a'}}</h5>
+        </div>
+        <hr/>
+        <div class="texto">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam eos, accusamus ex repudiandae earum maiores corporis illo adipisci necessitatibus distinctio, dolorum ducimus impedit quos quidem iure molestias voluptatem accusantium magnam.</p>
+        </div>
+        <hr/>
+        <div class="avaliar">
+            <h1>Avalie este Artigo</h1>
+        </div>
+        <div class="likeDislike">
+            <div class="like">
+                <ion-button (click)="likeUp()"><ion-icon name="arrow-up"></ion-icon>{{like}}</ion-button>
+            </div>
+            <div class="dislike">
+                <ion-button (click)="dislikeUp()" color="danger"><ion-icon name="arrow-down"></ion-icon>{{dislike}}</ion-button>
+            </div>
+        </div>
+        <div class="linha">
+            <hr>
+        </div>
+        <div class="numero">
+            <h6>3 comentários</h6>
+        </div>
+        <div class="vista">
+            <div class="pessoa">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <h6>Artur Dias</h6>
+            </div>
+            <h6 class="dias">1 ano atrás</h6>
+        </div>
+        <div class="textoComentario">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio eius veniam enim in cupiditate obcaecati!</p>
+        </div>
+        <hr/>
+        <div class="vista">
+            <div class="pessoa">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <h6>Abertino Conceição</h6>
+            </div>
+            <h6 class="dias">50 anos atrás</h6>
+        </div>
+        <div class="textoComentario">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio eius veniam enim in cupiditate obcaecati!</p>
+        </div>
+        <hr/>
+        <div class="vista">
+            <div class="pessoa">
+                <ion-icon name="person-circle-outline"></ion-icon>
+                <h6>Roberto Almeida</h6>
+            </div>
+            <h6 class="dias">1 dia atrás</h6>
+        </div>
+        <div class="textoComentario">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio eius veniam enim in cupiditate obcaecati!</p>
+        </div>
+        <div class="comente">
+            <h1>Deixe o seu comentário</h1>
+        </div>
+        <div class="comentarios">
+            <input placeholder="Escreva aqui...">
+            <button><ion-icon slot="icon-only" name="arrow-redo-outline"></ion-icon></button>
         </div>
     </div>
+    <app-footer></app-footer>
 </ion-content>
+<ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button color="success">
+        <ion-icon name="share-social-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+        <ion-fab-button><ion-icon name="logo-whatsapp"></ion-icon></ion-fab-button>
+        <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+        <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+        <ion-fab-button><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+</ion-fab>
