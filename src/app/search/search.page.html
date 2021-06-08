@@ -2,8 +2,8 @@
 <ion-content>
   <div class="container">
     <form>
-      <ion-searchbar [(ngModel)]="news.title" name="title" onSubmit="news.title"></ion-searchbar>
-      <button [routerLink]="['/search']" (click)="getNews(news.title)"></button>
+      <ion-searchbar [(ngModel)]="news.search" name="search" onSubmit="news.search"></ion-searchbar>
+      <button [routerLink]="['/search']" (click)="getNews(news.search)"></button>
     </form>
     <div class="cards" *ngFor="let new of news" [routerLink]="['/noticia', new.id]">
       <img src="{{new.multimediaPrincipal}}">

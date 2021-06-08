@@ -10,8 +10,6 @@ import { SearchService } from './search.service';
 export class SearchPage implements OnInit {
 
   news: any = []
-  search: any
-  queryName = this.router.url
 
   constructor(private searchService: SearchService, private router: ActivatedRoute) { }
 

@@ -11,11 +11,14 @@ export class NoticiaPage implements OnInit {
 
   news: any
   id: string = ''
-  like = 0
-  dislike = 0
-  
+  comment: any = []
+  commentary: any = []
 
-  constructor(private service: NoticiaService, private route: ActivatedRoute) { }
+  constructor(private service: NoticiaService, private route: ActivatedRoute) { 
+    this.comment = [
+      {id: 1}
+    ]
+  }
 
   ngOnInit(): void {
     this.initCurrentNew()
@@ -38,21 +41,12 @@ export class NoticiaPage implements OnInit {
     });
   }
 
-  likeUp() {
-    if(this.like < 1 && this.dislike === 0) {
-      this.like++
-    }
-    else if(this.like=1) {
-      this.like--
-    }
+  postComment(com) {
+    const teste = [{com}]
+    this.commentary = teste
   }
-  
-  dislikeUp() {
-    if(this.dislike < 1 && this.like === 0) {
-      this.dislike++
-    }
-    else if(this.dislike = 1) {
-      this.dislike--
-    }
+
+  shareUrl(url) {
+    window.open(url, '_system');
   }
 }
