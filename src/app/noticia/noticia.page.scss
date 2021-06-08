@@ -89,28 +89,48 @@ hr {
 .comentarios {
     display: flex;
     align-items: center;
-    justify-content: center;
-    input {
-        height: 35px;
-        width: 230px;
-        border-radius: 5px 0px 0px 5px;
-        border: 1px solid #808080;
-        outline: 0;
-        padding: 0 16px;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    justify-content: center; 
+    .espaco {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        input:first-child {
+            height: 35px;
+            width: 230px;
+            border-radius: 5px 0px 0px 0px;
+            border: 1px solid #808080;
+            outline: 0;
+            padding: 0 16px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            margin: -0.5px;
+        }
+        & > input {
+            height: 35px;
+            width: 230px;
+            border-radius: 0px 0px 0px 5px;
+            border: 1px solid #808080;
+            outline: 0;
+            padding: 0 16px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            margin: -0.5px;
+        }
     }
-    button {
-        margin-left: -1px;
-        background-color: transparent;
-        width: 50px;
-        height: 35px;
-        background-color: #e5e5e5;
-        border-radius: 0 5px 5px 0;
-        border: 1px solid #6c757d;
-        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        ion-icon {
-            width: 30px;
-            height: 30px;
+    .click {
+        display: flex;
+        align-items: center;
+        button {
+            margin-left: -1px;
+            background-color: transparent;
+            width: 50px;
+            height: 69px;
+            background-color: #e5e5e5;
+            border-radius: 0 5px 5px 0;
+            border: 1px solid #6c757d;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            ion-icon {
+                width: 30px;
+                height: 30px;
+            }
         }
     }
 }
@@ -148,6 +168,21 @@ hr {
     padding-left: 26px;
     padding-right: 26px;
     margin-top: -18px;
+}
+.likes {  
+    display: flex;
+    align-items: center;
+    margin-right: -20px;
+    button {
+        background-color: transparent;
+        margin: 0 14px;
+        height: 40px;
+        width: 50px;
+        ion-icon {
+            height: 10px;
+            width: 20px;
+        }
+    }
 }
 .algo {
     p {
@@ -196,13 +231,13 @@ hr {
     }
 }
 .link {
-    text-align: center;
+    margin-left: 48px;
+    margin-top: -15px;
     h6 {
-        font-weight: bold;
+        font-size: 10px;
     }
     a {
         color: #696969;
-        font-size: 12px;
         cursor: pointer;
     }
 }
