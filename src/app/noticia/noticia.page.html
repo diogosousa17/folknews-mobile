@@ -41,35 +41,32 @@
                 <h1>Deixe o seu comentário</h1>
             </div>
             <div class="comentarios">
-                <div class="espaco">
-                    <input placeholder="Insira o nome..." [(ngModel)]="name">
-                    <input placeholder="Insira o comentário..." [(ngModel)]="comment">
-                </div>
-                <div class="click">
-                    <button (click)="postComment()"><ion-icon slot="icon-only" name="arrow-redo-outline"></ion-icon></button>            
-                </div>
+                <form #comment="ngForm" (ngSubmit)="postComment(comment)" ngNativeValidate>
+                    <div class="espaco">
+                        <input placeholder="Insira o nome..." name="nome" ngModel required>
+                        <input placeholder="Insira o comentário..." name="comentario" ngModel required>
+                    </div>
+                    <div class="click">
+                        <button type="submit"><ion-icon slot="icon-only" name="arrow-redo-outline"></ion-icon></button>            
+                    </div>
+                </form>
             </div>
             <div class="numero">
                 <h6>Comentários:</h6>
             </div>
-            <div class="algo1">
-                <div class="commentary" *ngFor="let name of setName">
-                    <div class="vista">
-                        <div class="pessoa">
-                            <ion-icon name="person-circle-outline"></ion-icon>
-                            <h6>{{name}}</h6>
-                        </div>
-                        <div class="likes">
-                            <button (click)="likeUp()">{{like}}<ion-icon name="chevron-up-outline"></ion-icon></button>
-                            <button (click)="dislikeUp()">{{dislike}}<ion-icon name="chevron-down-outline"></ion-icon></button>
-                        </div>
+            <div class="commentary" *ngFor="let comment of comments, let i = index">
+                <div class="vista">
+                    <div class="pessoa">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                        <h6>{{comment.name}}</h6>
                     </div>
-                    <div class="textoComentario">
-                        <p>asd</p>
-                    </div>
-                    <hr/>
+                    <p>Hoje</p>
                 </div>
-            </div>  
+                <div class="textoComentario">
+                    <p>{{comment.comment}}</p>
+                </div>
+                <hr/>
+            </div>
         </div>
         <app-footer></app-footer>
     </ion-content>

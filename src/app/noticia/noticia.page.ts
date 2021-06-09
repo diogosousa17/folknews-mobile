@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { NoticiaService } from './noticia.service';
 
@@ -8,7 +9,7 @@ import { NoticiaService } from './noticia.service';
   styleUrls: ['./noticia.page.scss'],
 })
 export class NoticiaPage implements OnInit {
-
+  
   news: any
   id: string = ''
   comment: ""
@@ -17,56 +18,36 @@ export class NoticiaPage implements OnInit {
   setName = []
   like = 0
   dislike = 0
-
+  comments = []
+  
   constructor(private service: NoticiaService, private route: ActivatedRoute) { }
-
+  
   ngOnInit(): void {
     this.initCurrentNew()
   }
-
+  
   getNews(id: string) {
     this.service.getNews(id)
     .subscribe(response => this.news = response
       )
     }
-
-  initCurrentNew() {
-    const newsId = this.route.snapshot.paramMap.get('id')
-    if (newsId != null) {
-      this.id = newsId;
+    
+    initCurrentNew() {
+      const newsId = this.route.snapshot.paramMap.get('id')
+      if (newsId != null) {
+        this.id = newsId;
+      }
+      this.service.getNews(this.id).subscribe(response => {
+        this.news = response
+        this.news = [this.news]
+      });
     }
-    this.service.getNews(this.id).subscribe(response => {
-      this.news = response
-      this.news = [this.news]
-    });
-  }
-
-  shareUrl(url) {
-    window.open(url)
-  }
-
-  postComment() {
-    this.setComment.push(this.comment)
-    this.comment = ""
-    this.setName.push(this.name)
-    this.name = ""
-  }
-
-  likeUp() {
-    if(this.like < 1 && this.dislike === 0) {
-      this.like++
+    
+    shareUrl(url) {
+      window.open(url)
     }
-    else if(this.like=1) {
-      this.like--
+    
+    postComment(form: NgForm) {
+      this.comments.push({name: form.value.nome, comment: form.value.comentario, likes: 0, dislikes: 0, isLiked: false})
     }
   }
-  
-  dislikeUp() {
-    if(this.dislike < 1 && this.like === 0) {
-      this.dislike++
-    }
-    else if(this.dislike = 1) {
-      this.dislike--
-    }
-  }
-}

@@ -12,4 +12,8 @@ export class ButtonsPage implements OnInit {
   ngOnInit() {
   }
 
+  sliderOptions = {
+    slidesPerView: 4,
+    freeMode: true
+  };
 }
